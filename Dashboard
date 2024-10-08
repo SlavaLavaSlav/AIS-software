@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moisture Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 600px; margin: auto; text-align: center; }
+        .weather { margin-bottom: 20px; }
+        .tips { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Soil Moisture Dashboard</h1>
+        <div class="weather">
+            <h2>Weather Info</h2>
+            {% if weather %}
+                <p>Temperature: {{ weather.main.temp }}°C</p>
+                <p>Weather: {{ weather.weather[0].description }}</p>
+            {% else %}
+                <p>Weather data not available.</p>
+            {% endif %}
+        </div>
+        <h2>Current Moisture: {{ moisture }}%</h2>
+        <h3>Moisture Level: {{ moisture_level }}</h3>
+        <div class="tips">
+            <h2>Garden Maintenance Tips</h2>
+            <p>Tip 1: Water your plants early in the morning.</p>
+            <p>Tip 2: Check soil moisture regularly.</p>
+            <p>Tip 3: Mulch your garden to retain moisture.</p>
+        </div>
+    </div>
+</body>
+</html>
